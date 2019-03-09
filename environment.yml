@@ -160,12 +160,12 @@ dependencies:
     - tqdm==4.31.1
     - visdom==0.1.8.5
     - websocket-client==0.54.0
-    - libgfortran-ng=7.3.0
-    - libglu=9.0.0
-    - libstdcxx-ng=8.2.0
-    - freeglut=3.0.0
-    - secretstorage=3.1.0
-    - libgcc-ng=8.2.0
+    - libgfortran-ng==7.3.0
+    - libglu==9.0.0
+    - libstdcxx-ng==8.2.0
+    - freeglut==3.0.0
+    - secretstorage==3.1.0
+    - libgcc-ng==8.2.0
 
 
 prefix: /home/emaraic/anaconda3/envs/pytorch

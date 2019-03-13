@@ -28,13 +28,13 @@ from utils import iou_eval
 from dataloaders import augmentation as augment
 from utils.flops_counter import add_flops_counting_methods ,flops_to_string, get_model_parameters_number
 
-from models.backbone_networks.darknet import Darknet19
+#from models.backbone_networks.darknet import Darknet19
 
 ap = argparse.ArgumentParser()
 ap.add_argument('--backbone_network', required=False,
-                help = 'name of backbone network',default='darknet')#shufflenet, mobilenet, and darknet
+                help = 'name of backbone network',default='shufflenet')#shufflenet, mobilenet, and darknet
 ap.add_argument('-modpth', '--model_path', required=False,
-                help = 'path to pretrained model',default='pretrained_models/liteseg-darknet-cityscapes.pth')
+                help = 'path to pretrained model',default='pretrained_models/liteseg-shufflenet-cityscapes.pth')
 
 
 CONFIG=Dict(yaml.load(open("config/training.yaml")))
@@ -49,13 +49,12 @@ modelpath=args.model_path
 #Net1.cuda()
 #Net1.eval()
 
-net=LiteSeg.build(backbone_network,modelpath,CONFIG)
+net=LiteSeg.build(backbone_network,modelpath,CONFIG,is_train=False)
 net.eval()  
 
-gpu_id = 0
 
-if gpu_id >= 0:
-    torch.cuda.set_device(device=gpu_id)
+if CONFIG.USING_GPU:
+    torch.cuda.set_device(device=CONFIG.GPU_ID)
     net.cuda()
 
 #burn-in with 200 images   
@@ -108,7 +107,7 @@ net.eval()
 for ii, sample_batched in enumerate(valloader):#valloader
             inputs, labels = sample_batched['image'], sample_batched['label']
             inputs, labels = Variable(inputs, requires_grad=True), Variable(labels)
-            if gpu_id >= 0:
+            if CONFIG.USING_GPU:
                 inputs, labels = inputs.cuda(), labels.cuda()
 
             with torch.no_grad():

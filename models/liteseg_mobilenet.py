@@ -19,16 +19,16 @@ from models.separableconv import SeparableConv2d
 
 class RT(nn.Module):
     
-    def __init__(self, n_classes=19,PRETRAINED_WEIGHTS=".", pretrained=False):
+    def __init__(self, n_classes=19,PRETRAINED_WEIGHTS=".", pretrained=True):
         
         super(RT, self).__init__()
         print("LiteSeg-MobileNet...")
 
         self.mobile_features=MobileNetV2.MobileNetV2()
-        state_dict = torch.load(PRETRAINED_WEIGHTS)
-        self.mobile_features.load_state_dict(state_dict)
+        if pretrained:
+            state_dict = torch.load(PRETRAINED_WEIGHTS)
+            self.mobile_features.load_state_dict(state_dict)
         
-
         rates = [1, 3, 6, 9]
 
 

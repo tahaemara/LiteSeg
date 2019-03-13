@@ -96,7 +96,7 @@ print(save_path)
 
 
 # Network definition
-net=LiteSeg.build(backbone_network,None,CONFIG)
+net=LiteSeg.build(backbone_network,None,CONFIG,is_train=True)
 if CONFIG.USING_GPU:
     torch.cuda.set_device(device=CONFIG.GPU_ID)
     net.cuda()

@@ -46,7 +46,7 @@ modelpath=args.model_path
 images_path=args.images_path
 use_gpu=args.gpu
 
-net=LiteSeg.build(backbone_network,modelpath,CONFIG)
+net=LiteSeg.build(backbone_network,modelpath,CONFIG,is_train=False)
 net.eval()  
 
 

@@ -18,13 +18,14 @@ from models.separableconv import SeparableConv2d
 
 class RT(nn.Module):
     
-    def __init__(self,  n_classes=19, pretrained=False,PRETRAINED_WEIGHTS="."):
+    def __init__(self,  n_classes=19, pretrained=True,PRETRAINED_WEIGHTS="."):
        
         super(RT, self).__init__()
         print("LiteSeg-DarkNet...")
-
-        self.resnet_features=darknet.Darknet19(weights_file=PRETRAINED_WEIGHTS)
-       
+        if pretrained:
+            self.resnet_features=darknet.Darknet19(weights_file=PRETRAINED_WEIGHTS)
+        else:
+            self.resnet_features=darknet.Darknet19(weights_file=None)
         rates = [1, 3, 6, 9]
 
         self.aspp1 = aspp.ASPP(1024, 96, rate=rates[0])

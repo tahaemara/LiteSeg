@@ -19,14 +19,14 @@ from models import liteseg_mobilenet as mobilenet
 class LiteSeg():
     
         
-    def build(backbone_network,modelpath,CONFIG):
+    def build(backbone_network,modelpath,CONFIG,is_train=True):
                 
         if backbone_network.lower() == 'darknet':
-            net = darknet.RT(n_classes=19, PRETRAINED_WEIGHTS=CONFIG.PRETRAINED_DarkNET19)
+            net = darknet.RT(n_classes=19, pretrained=is_train,PRETRAINED_WEIGHTS=CONFIG.PRETRAINED_DarkNET19)
         elif backbone_network.lower() == 'shufflenet':
-            net = shufflenet.RT(n_classes=19, PRETRAINED_WEIGHTS=CONFIG.PRETRAINED_SHUFFLENET)
+            net = shufflenet.RT(n_classes=19, pretrained=is_train, PRETRAINED_WEIGHTS=CONFIG.PRETRAINED_SHUFFLENET)
         elif backbone_network.lower() == 'mobilenet':
-            net = mobilenet.RT(n_classes=19,PRETRAINED_WEIGHTS=CONFIG.PRETRAINED_MOBILENET)
+            net = mobilenet.RT(n_classes=19,pretrained=is_train, PRETRAINED_WEIGHTS=CONFIG.PRETRAINED_MOBILENET)
         else:
             raise NotImplementedError
             

@@ -18,15 +18,16 @@ from models.separableconv import SeparableConv2d
 
 class RT(nn.Module):
     
-    def __init__(self, n_classes=19,PRETRAINED_WEIGHTS="."):
+    def __init__(self, n_classes=19,pretrained=True,PRETRAINED_WEIGHTS="."):
 
         super(RT, self).__init__()
         print("RTShufflenet model...")
 
         self.shuffle_features=ShuffleNet.ShuffleNet()
         self.shuffle_features = torch.nn.DataParallel(self.shuffle_features)
-        state_dict = torch.load(PRETRAINED_WEIGHTS)
-        self.shuffle_features.load_state_dict(state_dict)
+        if pretrained:
+            state_dict = torch.load(PRETRAINED_WEIGHTS)
+            self.shuffle_features.load_state_dict(state_dict)
         
        
         rates =[1, 3, 6, 9]

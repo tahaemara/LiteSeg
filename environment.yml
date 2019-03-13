@@ -146,7 +146,6 @@ dependencies:
   - torchvision=0.2.1
   - pip:
     - addict==2.2.0
-    - brambox==1.1.0
     - imutils==0.5.1
     - munch==2.3.2
     - pandas==0.23.4

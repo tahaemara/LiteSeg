@@ -11,6 +11,11 @@ Inorder to use this code you must install Anaconda and then apply the following 
 ```
 conda env create -f environment.yml
 ```
++ Activate liteseg environment
+
+```
+source activate liteseg
+```
 
 + Install [LightNet](https://gitlab.com/tahaemara/lightnet.git) fork to be able to use Darknet weights 
 
@@ -21,6 +26,8 @@ cd lightnet/
 
 pip install -r requirements.txt
 ```
+
+> In case of have any problem while installing the dependencies you can igonre the message. Then activate liteseg environment and start to use the code. If any error message appears in a form of *ModuleNotFoundError: No module named 'xxxx'*, you can just search google how to install package xxxx with conda or pip.
 
 # Sample results
 

@@ -67,10 +67,10 @@ class RT(nn.Module):
         x4 = self.aspp4(x)
         x5 = self.global_avg_pool(x)
         x5 = F.interpolate(x5, size=x4.size()[2:], mode='bilinear', align_corners=True)
-#        print('x1',x1.size())
+        #print('x1',x1.size())
         x = torch.cat((x,x1, x2, x3, x4, x5), dim=1)#x = torch.cat((x,x1, x2, x3, x4, x5), dim=1)
 
-       # ablation=torch.max(x, 1)[1]
+        #ablation=torch.max(x, 1)[1]
 
         x = self.conv1(x)
         x = self.bn1(x)
@@ -86,12 +86,13 @@ class RT(nn.Module):
         low_level_features = self.bn2(low_level_features)
         low_level_features = self.relu(low_level_features)
         x = torch.cat((x, low_level_features), dim=1)
-        ##   
+
+        
         #ablation=torch.max(x, 1)[1]
         x = self.last_conv(x)
         x = F.interpolate(x, size=input.size()[2:], mode='bilinear', align_corners=True)
 
-        return x#,ablation
+        return x #,ablation
 
     def freeze_bn(self):
         for m in self.modules():
@@ -105,43 +106,3 @@ class RT(nn.Module):
             elif isinstance(m, nn.BatchNorm2d):
                 m.weight.data.fill_(1)
                 m.bias.data.zero_()
-#import time
-#import numpy as np
-#from flops_counter import add_flops_counting_methods ,flops_to_string, get_model_parameters_number
-#from torchsummary import summary
-#if __name__ == "__main__":
-##        torch.manual_seed(0)
-##        torch.backends.cudnn.deterministic = True
-##        torch.backends.cudnn.benchmark = False
-##        np.random.seed(0)
-#        model = RT(nInputChannels=3, n_classes=19, os=8, pretrained=True,reduced=True)
-#        model.cuda()
-#        model.eval()
-#        #print(model)
-#        #summary(model, (3, 360, 640))
-##        image = torch.randn(1, 3, 360, 640).cuda()
-##        with torch.no_grad():
-##            a = time.perf_counter()
-##            output = model.forward(image)
-##            torch.cuda.synchronize() # wait for mm to finish
-##            b = time.perf_counter()
-##            print(b-a)   
-#        total=0
-#        for x in range(0,4):
-#            print(str(x))
-#        for x in range(0,300):
-#            image = torch.randn(1, 3, 360, 640).cuda()
-#            with torch.no_grad():
-#                a = time.perf_counter()
-#                output = model.forward(image)
-#                torch.cuda.synchronize() # wait for mm to finish
-#                b = time.perf_counter()
-#                total+=b-a
-#        print(str(total/300))
-#        batch = torch.FloatTensor(1, 3, 512, 1024).cuda()
-#        model = add_flops_counting_methods(model)
-#        model.eval().start_flops_count()
-#        _ = model(batch)
-#        
-#        print('Flops:  {}'.format(flops_to_string(model.compute_average_flops_cost())))
-#        print('Params: ' + get_model_parameters_number(model))

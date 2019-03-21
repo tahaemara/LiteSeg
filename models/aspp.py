@@ -33,9 +33,9 @@ class ASPP(nn.Module):
             self.conv1 =SeparableConv2d(planes,planes,3,1,1)
             self.bn1 = nn.BatchNorm2d(planes)
             self.relu1 = nn.ReLU()
-#            
-#        self.atrous_convolution = nn.Conv2d(inplanes, planes, kernel_size=kernel_size,
-#                                            stride=1, padding=padding, dilation=rate, bias=False)
+   
+            #self.atrous_convolution = nn.Conv2d(inplanes, planes, kernel_size=kernel_size,
+            #                         stride=1, padding=padding, dilation=rate, bias=False)
         self.atrous_convolution = SeparableConv2d(inplanes,planes,kernel_size,1,padding,rate)
         self.bn = nn.BatchNorm2d(planes)
         self.relu = nn.ReLU()

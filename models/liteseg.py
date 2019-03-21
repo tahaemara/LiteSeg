@@ -7,11 +7,8 @@ Created on Sun Jan 13 12:00:52 2019
 """
 import torch 
 
-#from models import rt_shufflenet as shufflenet
 from models import liteseg_shufflenet as shufflenet
-#from models import rt_darknet as darknet
 from models import liteseg_darknet as darknet
-#from models import rt_mobilenet as mobilenet
 from models import liteseg_mobilenet as mobilenet
 
 

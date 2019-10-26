@@ -5,6 +5,13 @@ This the official implementation of "LiteSeg: A Litewiegth ConvNet for Semantic 
 
 
 ## Installation
+### Main Dependencies:
+- Pytorch 0.4.1
+- OpenCV 3.4.2
+- pyyaml 3.13
+- [LightNet](https://gitlab.com/tahaemara/lightnet.git)
+
+
 Inorder to use this code you must install Anaconda and then apply the following steps:
 + Create the environment from the environment.yml file:
 

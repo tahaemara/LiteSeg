@@ -5,7 +5,9 @@ This the official implementation of "LiteSeg: A Litewiegth ConvNet for Semantic 
 
 
 ## Installation
-### Main Dependencies:
+To run the **demo example** you **need only** Pytorch, Numpy, and Pillow dependecies.
+
+**Main Dependencies:**
 - Pytorch 0.4.1
 - OpenCV 3.4.2
 - pyyaml 3.13
@@ -33,7 +35,7 @@ cd lightnet/
 pip install -r requirements.txt
 ```
 ##### Note
-> In case of have any problem while installing the dependencies you can igonre the message. Then activate liteseg environment and start to use the code. If any error message appears in a form of *ModuleNotFoundError: No module named 'xxxx'*, you can just search google how to install package xxxx with conda or pip.
+> In case of having any problem while installing the dependencies you can igonre the message. Then activate liteseg environment and start to use the code. If any error message appears in a form of *ModuleNotFoundError: No module named 'xxxx'*, you can just search google how to install package xxxx with conda or pip.
 
 
 ## Training

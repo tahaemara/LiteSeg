@@ -1,5 +1,33 @@
 # LiteSeg
-This the official implementation of "LiteSeg: A Litewiegth ConvNet for Semantic Segmentation"
+This the official implementation of "LiteSeg: A Litewiegth ConvNet for Semantic Segmentation", accpeted in [DICTA 2019](http://dicta2019.dictaconference.org).
+
+Comparing results with other lightweight models:
+
+| Model                      | GFLOPS | Class mIOU | Category mIOU |
+|----------------------------|--------|------------|---------------|
+| SegNet                     | 286.03 | 56.1%      | 79.1%         |
+| ESPNet                     | 9.67   | 60.3%      | 82.2%         |
+| ENet                       | 8.52   | 58.3%      | 80.4%         |
+| ERFNet                     | 53.48  | 68.0%      | 86.5%         |
+| SkipNet-ShuffleNet         | 4.63   | 58.3%      | 80.2%         |
+| SkipNet-MobilenetNet       | 13.8   | 61.5%      | 82.0%         |
+| CCC2                       | 6.29   | 61.9%      | nan           |
+| DSNet                      | nan    | 69.3%      | 86.0%         |
+| LightSeg-MobileNet (ours)  | 4.9    | 67.81%     | 86.79%        |
+| LightSeg-ShuffleNet (ours) | 2.75   | 65.17%     | 85.39%        |
+| LightSeg-DarkNet19 (ours)  | 103.09 | 70.75%     | 88.29%        |
+
+
+Computational performance (FPS) on Nividia GTX 1080 Ti for the image resultion 360x640 and the full resultion 1024x2048.
+
+| Network                   | FPS (360x640) | FPS (1024x2048) | Params(in millions) |
+|---------------------------|---------------|-----------------|---------------------|
+| ErfNet                    | 105           | 15              | 2.07                |
+| DSNet                     | 100.5         | -               | 0.91                |
+| LiteSeg-Darknet (ours)    | 98            | 15              | 20.55               |
+| ESPNET                    | 144           | 25              | 0.364               |
+| LiteSeg-MobileNet (ours)  | 161           | 22              | 4.38                |
+| LiteSeg-ShuffleNet (ours) | 133           | 31              | 3.51                |
 
 
 

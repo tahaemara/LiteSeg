@@ -89,14 +89,14 @@ You have an option to train network on fine data directley bust after setting **
 
 | Model                      | GFLOPS | Class mIOU | Category mIOU |
 |----------------------------|--------|------------|---------------|
-| SegNet                     | 286.03 | 56.1%      | 79.1%         |
-| ESPNet                     | 9.67   | 60.3%      | 82.2%         |
-| ENet                       | 8.52   | 58.3%      | 80.4%         |
-| ERFNet                     | 53.48  | 68.0%      | 86.5%         |
-| SkipNet-ShuffleNet         | 4.63   | 58.3%      | 80.2%         |
-| SkipNet-MobilenetNet       | 13.8   | 61.5%      | 82.0%         |
-| CCC2                       | 6.29   | 61.9%      | nan           |
-| DSNet                      | nan    | 69.3%      | 86.0%         |
+| SegNet[1]                  | 286.03 | 56.1%      | 79.1%         |
+| ESPNet[2]                  | 9.67   | 60.3%      | 82.2%         |
+| ENet[3]                    | 8.52   | 58.3%      | 80.4%         |
+| ERFNet[4]                  | 53.48  | 68.0%      | 86.5%         |
+| SkipNet-ShuffleNet[17]     | 4.63   | 58.3%      | 80.2%         |
+| SkipNet-MobilenetNet[17]   | 13.8   | 61.5%      | 82.0%         |
+| CCC2[6]                    | 6.29   | 61.9%      | nan           |
+| DSNet[7]                   | nan    | 69.3%      | 86.0%         |
 | LightSeg-MobileNet (ours)  | 4.9    | 67.81%     | 86.79%        |
 | LightSeg-ShuffleNet (ours) | 2.75   | 65.17%     | 85.39%        |
 | LightSeg-DarkNet19 (ours)  | 103.09 | 70.75%     | 88.29%        |
@@ -106,10 +106,10 @@ You have an option to train network on fine data directley bust after setting **
 
 | Network                   | FPS (360x640) | FPS (1024x2048) | Params(in millions) |
 |---------------------------|---------------|-----------------|---------------------|
-| ErfNet                    | 105           | 15              | 2.07                |
-| DSNet                     | 100.5         | -               | 0.91                |
+| ErfNet[4]                 | 105           | 15              | 2.07                |
+| DSNet[7]                  | 100.5         | -               | 0.91                |
 | LiteSeg-Darknet (ours)    | 98            | 15              | 20.55               |
-| ESPNET                    | 144           | 25              | 0.364               |
+| ESPNET[2]                 | 144           | 25              | 0.364               |
 | LiteSeg-MobileNet (ours)  | 161           | 22              | 4.38                |
 | LiteSeg-ShuffleNet (ours) | 133           | 31              | 3.51                |
 
@@ -138,6 +138,26 @@ You have an option to train network on fine data directley bust after setting **
       <img src="https://github.com/tahaemara/LiteSeg/blob/master/samples/predictions/frankfurt_000000_001016_leftImg8bit_liteseg-shufflenet.png?raw=true" alt="" data-canonical-src="https://github.com/tahaemara/LiteSeg/blob/master/samples/predictions/frankfurt_000000_001016_leftImg8bit_liteseg-shufflenet.png?raw=true" width="250" height="150">  
     </td></tr><tr><td>ErfNet</td><td><img src="https://github.com/tahaemara/LiteSeg/blob/master/samples/erfnet_predictions/frankfurt_000000_000294_leftImg8bit_erfnet.png?raw=true" alt="" data-canonical-src="https://github.com/tahaemara/LiteSeg/blob/master/samples/erfnet_predictions/frankfurt_000000_000294_leftImg8bit_erfnet.png?raw=true" width="250" height="150"> </td><td><img src="https://github.com/tahaemara/LiteSeg/blob/master/samples/erfnet_predictions/frankfurt_000000_001016_leftImg8bit_erfnet.png?raw=true" alt="" data-canonical-src="https://github.com/tahaemara/LiteSeg/blob/master/samples/erfnet_predictions/frankfurt_000000_001016_leftImg8bit_erfnet.png?raw=true" width="250" height="150"> </td></tr><tr><td>ESPNET</td><td><img src="https://github.com/tahaemara/LiteSeg/blob/master/samples/espnet_predictions/c_frankfurt_000000_000294_leftImg8bit.png?raw=true" alt="" data-canonical-src="https://github.com/tahaemara/LiteSeg/blob/master/samples/espnet_predictions/c_frankfurt_000000_000294_leftImg8bit.png?raw=true" width="250" height="150"> </td><td><img src="https://github.com/tahaemara/LiteSeg/blob/master/samples/espnet_predictions/c_frankfurt_000000_001016_leftImg8bit.png?raw=true" alt="" data-canonical-src="https://github.com/tahaemara/LiteSeg/blob/master/samples/espnet_predictions/c_frankfurt_000000_001016_leftImg8bit.png?raw=true" width="250" height="150"> </td></tr></tbody></table>
 
-# License
+## References 
+1.  V. Badrinarayanan, A. Kendall, and R. Cipolla, “Segnet: A deep con- volutional encoder-decoder architecture for image segmentation,” IEEE transactions on pattern analysis and machine intelligence, vol. 39, no. 12, pp. 2481–2495, 2017.
+
+2.  S. Mehta, M. Rastegari, A. Caspi, L. Shapiro, and H. Hajishirzi, “Espnet: Efficient spatial pyramid of dilated convolutions for semantic segmentation,” in Proceedings of the European Conference on Computer Vision (ECCV), pp. 552–568, 2018.
+
+3.  A. Paszke, A. Chaurasia, S. Kim, and E. Culurciello, “Enet: A deep neural network architecture for real-time semantic segmentation,” arXiv preprint arXiv:1606.02147, 2016.
+
+4.  E. Romera, J. M. Alvarez, L. M. Bergasa, and R. Arroyo, “Efficient convnet for real-time semantic segmentation,” in 2017 IEEE Intelligent Vehicles Symposium (IV), pp. 1789–1794, IEEE, 2017.
+
+5.  M. Siam, M. Gamal, M. Abdel-Razek, S. Yogamani, and M. Jager- sand, “Rtseg: Real-time semantic segmentation comparative study,” in 2018 25th IEEE International Conference on Image Processing (ICIP), pp. 1603–1607, IEEE, 2018.
+
+6.  H. Park, Y. Yoo, G. Seo, D. Han, S. Yun, and N. Kwak, “Concentrated- comprehensive convolutions for lightweight semantic segmentation,” arXiv preprint arXiv:1812.04920, 2018.
+
+7.  W. Wang and Z. Pan, “Dsnet for real-time driving scene semantic segmentation,” arXiv preprint arXiv:1812.07049, 2018.
+
+### Similar Repositories
+- [Segmentation models with pretrained backbones PyTorch](https://github.com/qubvel/segmentation_models.pytorch)
+- [DeepLab v3+ model in PyTorch](https://github.com/jfzhang95/pytorch-deeplab-xception)
+
+
+## License
 
 This software is released under a creative commons license which allows for personal and research use only. For a commercial license please contact the authors @ [taha@emaraic.com](mailto:taha@emaraic.com). You can view a license summary here: http://creativecommons.org/licenses/by-nc/4.0/

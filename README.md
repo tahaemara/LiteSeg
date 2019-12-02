@@ -154,8 +154,8 @@ You have an option to train network on fine data directley bust after setting **
 7.  W. Wang and Z. Pan, “Dsnet for real-time driving scene semantic segmentation,” arXiv preprint arXiv:1812.07049, 2018.
 
 ### Similar Repositories
-- [Segmentation models with pretrained backbones PyTorch](https://github.com/qubvel/segmentation_models.pytorch)
-- [DeepLab v3+ model in PyTorch](https://github.com/jfzhang95/pytorch-deeplab-xception)
+- <a href="https://github.com/qubvel/segmentation_models.pytorch" target="_blank">Segmentation models with pretrained backbones PyTorch</a>
+- <a href="https://github.com/jfzhang95/pytorch-deeplab-xception" target="_blank">DeepLab v3+ model in PyTorch</a>
 
 
 ## License

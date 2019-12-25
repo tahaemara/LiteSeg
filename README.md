@@ -93,8 +93,8 @@ You have an option to train network on fine data directley bust after setting **
 | ESPNet[2]                  | 9.67   | 60.3%      | 82.2%         |
 | ENet[3]                    | 8.52   | 58.3%      | 80.4%         |
 | ERFNet[4]                  | 53.48  | 68.0%      | 86.5%         |
-| SkipNet-ShuffleNet[17]     | 4.63   | 58.3%      | 80.2%         |
-| SkipNet-MobilenetNet[17]   | 13.8   | 61.5%      | 82.0%         |
+| SkipNet-ShuffleNet[5]     | 4.63   | 58.3%      | 80.2%         |
+| SkipNet-MobilenetNet[5]   | 13.8   | 61.5%      | 82.0%         |
 | CCC2[6]                    | 6.29   | 61.9%      | nan           |
 | DSNet[7]                   | nan    | 69.3%      | 86.0%         |
 | LightSeg-MobileNet (ours)  | 4.9    | 67.81%     | 86.79%        |

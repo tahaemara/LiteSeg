@@ -1,5 +1,7 @@
 # LiteSeg
-This the official implementation of "LiteSeg: A Litewiegth ConvNet for Semantic Segmentation", accpeted in [DICTA 2019](http://dicta2019.dictaconference.org).
+This the official implementation of LiteSeg a real time semantic segmenattaion model.
+
+Peper "LiteSeg: A Litewiegth ConvNet for Semantic Segmentation", accpeted in [DICTA 2019](https://arxiv.org/abs/1912.06683).
 
 
 
